@@ -1,7 +1,9 @@
 # P2P Project for ECE530
 
 ## Video Demo
-link
+link: https://youtu.be/7z0VCr765qE
+
+## About
 
 Our P2P chat (Peer-to-Peer chat) allows individuals to directly communicate with 
 each other through a decentralized network without relying on a central server. 
