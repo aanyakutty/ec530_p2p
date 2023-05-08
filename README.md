@@ -10,3 +10,12 @@ P2P chat systems are often used for privacy-sensitive communication, such as in 
 intercepted or monitored by third parties. They can also be used in situations where there is limited or no internet connectivity, such as in 
 remote areas or during natural disasters, where a decentralized network can provide a way for people to communicate without relying on centralized 
 infrastructure.
+
+## Working our P2P Chat
+1. Open terminal and run "python3 server.py"
+2. Open separate new terminal and run "python3 client.py"
+3. Repeat step 2 for several multiple users.
+4. On server side, click the "Start Chat" button.
+5. On the client side, type a username and click to join.
+6. Now send messages to the users online and leave when you are done.
+7. Chat history is saved in our database.
