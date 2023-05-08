@@ -8,7 +8,7 @@ layout = [[sg.Frame("Users", [[sg.Multiline(key="-CLIENTS-", size=(30, 10), disa
 window = sg.Window("Peer to Peer Server", layout)
 
 host_add = "0.0.0.0"
-host_port = 8910
+host_port = 8080
 clients = []
 clients_names = []
 

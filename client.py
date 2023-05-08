@@ -16,7 +16,7 @@ window = sg.Window("Client", layout)
 username = ""
 client = None
 HOST_ADDR = "0.0.0.0"
-HOST_PORT = 8910
+HOST_PORT = 8080
 
 def connect_to_server(name):
     global client, HOST_PORT, HOST_ADDR
@@ -26,7 +26,7 @@ def connect_to_server(name):
         client.send(name.encode()) 
 
         window["-NAME-"].update(disabled=True)
-        window["Connect"].update(disabled=True)
+        window["Join"].update(disabled=True)
         window["-MSG-"].update(disabled=False)
 
         
@@ -35,10 +35,10 @@ def connect_to_server(name):
         sg.popup_error("Cannot connect to host: " + HOST_ADDR + " on port: " + str(HOST_PORT) + " Server may be Unavailable. Try again later")
 
 
-# Function to display chat history
+# Displays chat history on history.db
 def display_chat_history(name):
     try:
-        conn = sqlite3.connect('chat_history.db')
+        conn = sqlite3.connect('history.db')
         c = conn.cursor()
         c.execute("SELECT * FROM messages WHERE sender=? OR receiver=?", (name, name))
         chat_history = c.fetchall()
@@ -73,7 +73,7 @@ def receive_message_from_server(sck, m):
 
 
 def save_to_database(sender, receiver, message):
-    conn = sqlite3.connect('chat_history.db')
+    conn = sqlite3.connect('history.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS messages
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
